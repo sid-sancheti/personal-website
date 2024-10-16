@@ -1,5 +1,5 @@
 ---
-const title = 'Sid\'s Corner';
+
 ---
 
 <html lang="en">
@@ -8,17 +8,18 @@ const title = 'Sid\'s Corner';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Home | {title}</title>
+		<title>Blog | Sid's Corner</title>
 	</head>
 	<body>
 		<a href="/">Home</a>
 		<a href="/about/">About</a>
 		<a href="/blog/">Blog</a>
-
-		<h1>Nice to meet you! I'm Sid and welcome to {title}</h1>
-		<h2>
-			And I am sure you are here to learn a little bit more about me. Get a glipse into what I do on
-			this great green planet.
-		</h2>
+		
+		<h1>Nice to meet you! I'm Sid and this is my blog.</h1>
+        <ul>
+            <li><a href="/posts/post1/">Post 1</a></li>
+            <li><a href="/posts/post2/">Post 2</a></li>
+            <li><a href="/posts/post3/">Post 3</a></li>
+          </ul>
 	</body>
 </html>
