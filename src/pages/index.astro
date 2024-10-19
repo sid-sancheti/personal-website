@@ -1,25 +1,10 @@
 ---
-const title = 'Sid\'s Corner';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const subtitle = "Hi, I'm Sid!";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Home | {title}</title>
-	</head>
-	<body>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
-
-		<h1>Hi. I'm Sid</h1>
-		<h2>I'm a Computer Science student at Purdue University.</h2>
-		<p>
-			While you are here, why not take some time to get to know me better.
-		</p>
-		
-	</body>
-</html>
+<BaseLayout>
+	<h1>{subtitle}</h1>
+	<p>Welcome to my landing page.</p>
+	<p>Feel free to explore the site!</p>
+</BaseLayout>
+	

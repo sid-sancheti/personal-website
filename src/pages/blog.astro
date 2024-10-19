@@ -1,5 +1,8 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
+import '../styles/global.css';
 ---
 
 <html lang="en">
@@ -11,15 +14,18 @@
 		<title>Blog | Sid's Corner</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
+		<Header />
 		
 		<h1>Nice to meet you! I'm Sid and this is my blog.</h1>
         <ul>
             <li><a href="/posts/post1/">Post 1</a></li>
             <li><a href="/posts/post2/">Post 2</a></li>
             <li><a href="/posts/post3/">Post 3</a></li>
-          </ul>
+        </ul>
+
+		<Footer />
+		<script>
+            import "../scripts/menu.js";
+        </script>
 	</body>
 </html>
