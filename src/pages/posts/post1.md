@@ -1,4 +1,6 @@
 ---
+# This is yaml data
+layout: '../../layouts/MarkdownPostLayout.astro'
 title: 'My Raspberry Pi'
 pubDate: 2024-10-~
 description: 'This is the story of how I hosted this website, on my Raspberry Pi.'
@@ -6,8 +8,6 @@ author: 'Sid Sancheti'
 tags: ["Raspberry Pi", "Blogging", "Blog", "Web Server on a Raspberry Pi", "Web Server"]
 ---
 # My First Blog Post
-
-Published on: 2024-10-~
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
