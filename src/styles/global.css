@@ -1,0 +1,27 @@
+h1 {
+  margin: 10px;
+  font-size: 4rem;
+  text-decoration: none;
+  color: white;
+  padding: 0px;
+}
+
+h2 {
+  font-family: Blippo, fantasy;
+  color: white;
+  margin: 20px
+}
+
+@font-face {
+  font-family: 'Oxanium';
+  src: url('../../public/fonts/Oxanium-ExtraLight.ttf') format('tff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}

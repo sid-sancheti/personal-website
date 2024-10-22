@@ -1,7 +1,8 @@
 ---
 import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+
 import '../styles/global.css';
+// import '@fontsource/oxanium/200.css';
 const name = 'Sid Sancheti';
 const {title, pageTitle, description} = Astro.props;
 ---
@@ -9,41 +10,53 @@ const {title, pageTitle, description} = Astro.props;
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
   <body>
     <div class="rectangle">
-      <h2>Demonstrating the Box Model</h2>
-      
-      <p>Here is an example of box model</p>
-      
-      <div>You can easily create such type of box simply implementing this code for your website or webpage.</div>
+      <h1>Sid Sancheti</h1>
+      <hr></hr>
+      <Navigation />
     </div>
   </body>
 </html>
 
 <style>
   html {
-    background-color: tan
-  }
-  .rectangle {
-    border: 1px solid black;
-    margin: 5px;
-    justify-content: center;
-    align-items: center;
-    width: 90vw;
-    height: 90vh;
+    background-color: black
   }
 
   h1 {
-    font-size: 3rem;
-    font-family: Blippo, fantasy;
+    font-family: 'Oxanium', sans-serif;
   }
 
-  h2 {
-    font-family: Blippo, fantasy;
-    margin: 20px
+  hr {
+    border: 1px solid white;
+  }
+
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+  .rectangle {
+    width: 94vw;  
+    height: 94vh;
+    margin-left: 3vw;
+    margin-top: 2vh;
+    border: 2px solid white;
+  }
+
+  @font-face {
+    font-family: 'Oxanium';
+    src: url('/fonts/Oxanium-ExtraLight.ttf') format('truetype');
+  }
+
+  @media (max-width: 600px) {
+    .rectangle {
+      height: 90vh;
+      margin-top: 3.5vh;
+    }
   }
 </style>
