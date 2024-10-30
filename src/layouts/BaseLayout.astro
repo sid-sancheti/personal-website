@@ -4,7 +4,7 @@ import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
 // import '@fontsource/oxanium/200.css';
 const name = 'Sid Sancheti';
-const {title, pageTitle, description} = Astro.props;
+const {title} = Astro.props;
 ---
 <html lang="en">
   <head>
@@ -12,12 +12,11 @@ const {title, pageTitle, description} = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
+    <title>{title}</title>
   </head>
   <body>
     <div class="rectangle">
-      <h1>Sid Sancheti</h1>
-      <hr></hr>
+      <h1>{name}</h1>
       <Navigation />
     </div>
   </body>
@@ -30,6 +29,8 @@ const {title, pageTitle, description} = Astro.props;
 
   h1 {
     font-family: 'Oxanium', sans-serif;
+    padding: 0px;
+    margin: 1%;
   }
 
   hr {
@@ -53,10 +54,19 @@ const {title, pageTitle, description} = Astro.props;
     src: url('/fonts/Oxanium-ExtraLight.ttf') format('truetype');
   }
 
+  @font-face {
+    font-family: 'Exo';
+    src: url('/fonts/Exo-Light.ttf') format('truetype');
+  }
+
   @media (max-width: 600px) {
     .rectangle {
       height: 90vh;
       margin-top: 3.5vh;
+    }
+    
+    h1 {
+      margin: 3%;
     }
   }
 </style>
