@@ -2,7 +2,6 @@
 import Navigation from '../components/Navigation.astro';
 
 import '../styles/global.css';
-// import '@fontsource/oxanium/200.css';
 const name = 'Sid Sancheti';
 const {title} = Astro.props;
 ---
@@ -18,7 +17,8 @@ const {title} = Astro.props;
     <div class="rectangle">
       <h1>{name}</h1>
       <Navigation />
-    </div>
+      <slot />
+\    </div>
   </body>
 </html>
 

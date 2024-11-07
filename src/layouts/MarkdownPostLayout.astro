@@ -1,5 +1,4 @@
 ---
-import Footer from '../components/Footer.astro';
 import Navigation from '../components/Navigation.astro';
 const { frontmatter } = Astro.props;
 ---
@@ -7,5 +6,3 @@ const { frontmatter } = Astro.props;
 <h1>{frontmatter.title}</h1>
 <p>Published on {frontmatter.pubDate}</p>
 <slot />
-
-<Footer />
