@@ -1,20 +1,20 @@
+html {
+  background-color: black;
+}
+
 h1 {
-  margin: 10px;
   font-size: 4rem;
   text-decoration: none;
   color: white;
   padding: 0px;
-}
-
-h2 {
-  font-family: Blippo, fantasy;
-  color: white;
-  margin: 20px
+  font-family: 'Oxanium', sans-serif;
+  padding: 0px;
+  margin: 1%;
 }
 
 @font-face {
   font-family: 'Oxanium';
-  src: url('../../public/fonts/Oxanium-ExtraLight.ttf') format('tff');
+  src: url('/fonts/Oxanium-ExtraLight.ttf') format('tff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
