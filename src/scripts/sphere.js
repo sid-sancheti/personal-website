@@ -2,39 +2,38 @@
  https://chatgpt.com/share/6745a91b-9338-8003-9711-b7494923e589
  */
 
- var vextexShaderText = `#version 300 es
- precision mediump float;
+import { mat4, vec3 } from 'gl-matrix';
 
- in vec3 aPos;
- uniform mat4 rotation;
- void main() {
-     gl_Position = rotation * vec4(aPos, 1.0);
+var vextexShaderText = `#version 300 es
+precision mediump float;
 
-     gl_PointSize = (gl_Position.z + 0.5) / 0.25;     // Map z: [-1, 1] to PointSize: [0, ]
- }`;
+in vec3 aPos;
+uniform mat4 rotation;
+void main() {
+  gl_Position = rotation * vec4(aPos, 1.0);
+  gl_PointSize = (gl_Position.z + 0.5) / 0.25;     // Map z: [-1, 1] to PointSize: [0, ]
+}`;
 
 var fragmentShaderText = `#version 300 es
- precision mediump float;
+precision mediump float;
 
- out vec4 FragColor;
+out vec4 FragColor;
+void main(void) {
+  // gl_PointCoord gives a normalized [0, 1] range
+  vec2 coord = gl_PointCoord - vec2(0.5);
+  float distanceFromCenter = length(coord);
+  // If the fragment is outside the circle, discard it
+  if (distanceFromCenter > 0.5) {
+    discard;
+  }
 
- void main(void) {
-     // gl_PointCoord gives a normalized [0, 1] range
-     vec2 coord = gl_PointCoord - vec2(0.5);
-     float distanceFromCenter = length(coord);
-
-     // If the fragment is outside the circle, discard it
-     if (distanceFromCenter > 0.5) {
-         discard;
-     }
-
-     // Use depth to control color
-     if (gl_FragCoord.z < 0.3) {
-         FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-     } else {
-         FragColor = vec4(1.0, 1.0, 1.0, 1.0);
-     }
- }`;
+  // Use depth to control color
+  if (gl_FragCoord.z < 0.3) {
+    FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+  } else {
+    FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+  }
+}`;
 
 const NUM_POINTS = 2000;
 const SCALE = 0.9;
