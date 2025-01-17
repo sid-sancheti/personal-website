@@ -11,7 +11,7 @@ in vec3 aPos;
 uniform mat4 rotation;
 void main() {
   gl_Position = rotation * vec4(aPos, 1.0);
-  gl_PointSize = (gl_Position.z + 0.5) / 0.25;     // Map z: [-1, 1] to PointSize: [0, ]
+  gl_PointSize = (gl_Position.z + 0.5) / 0.25;     // Map z: [-1, 1] to PointSize: [0, 6]
 }`;
 
 var fragmentShaderText = `#version 300 es
@@ -79,8 +79,8 @@ export function InitSphere() {
 
   // Resize the canvas to match the window size
   const resizeCanvas = () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth / 1.2;
+    canvas.height = window.innerHeight / 1.2;
 
     // Center the viewport
     var min = canvas.width < canvas.height ? canvas.width : canvas.height;
