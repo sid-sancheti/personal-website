@@ -1,9 +1,6 @@
 ---
 ---
 <!-- This is where we need to adjust in order to center the sphere can trim scope. -->
-<div id="webgl-container">
-  <canvas id="webgl-canvas"></canvas>
-</div>
 <body onload="InitSphere();">
     <canvas id="sphere" width="800" height="800">
         Your browser does not support HTML5
@@ -15,3 +12,12 @@
         InitSphere();
     </script>
 </body>
+
+<style>
+    /* Center the sphere canvas */
+     #sphere {
+        position: sticky;
+        top: 50%;
+        left: 50%;
+    }
+</style>
