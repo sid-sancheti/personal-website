@@ -79,8 +79,13 @@ export function InitSphere() {
 
   // Resize the canvas to match the window size
   const resizeCanvas = () => {
-    canvas.width = window.innerWidth / 1.2;
-    canvas.height = window.innerHeight / 1.2;
+    /*
+     * The constant 1.5 makes the sphere smaller on the screen (design choice)
+     * Setting both the canvas width and height to the same value places the sphere
+     * on a square canvas.
+     */
+    canvas.width = window.innerHeight / 1.5;
+    canvas.height = window.innerHeight / 1.5;
 
     // Center the viewport
     var min = canvas.width < canvas.height ? canvas.width : canvas.height;

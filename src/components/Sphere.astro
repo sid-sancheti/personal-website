@@ -2,7 +2,7 @@
 ---
 <!-- This is where we need to adjust in order to center the sphere can trim scope. -->
 <body onload="InitSphere();">
-    <canvas id="sphere" width="800" height="800">
+    <canvas id="sphere">
         Your browser does not support HTML5
     </canvas>
     <br />
@@ -15,9 +15,9 @@
 
 <style>
     /* Center the sphere canvas */
-     #sphere {
-        position: sticky;
-        top: 50%;
-        left: 50%;
+    canvas {
+        position: absolute;
+        top: 60%;
+        left: 75%;
     }
 </style>
