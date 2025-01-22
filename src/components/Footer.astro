@@ -1,18 +1,36 @@
 ---
 import '../styles/global.css';
 ---
-<h3>Powered by <a href="https://astro.build">Astro</a></h3>
+<ul class="dot-separated-list">
+    <li>© Sid Sancheti 2025</li>
+    <li>Inspiration drawn from <a href="https://p5aholic.me/">Kieta Yamada</a></li>
+</ul>
 
 <style>
-    a {
-        color: #666666;
-    }
-
-    h3 {
-        color: #666666;
+    .dot-separated-list {
+        list-style: none; /* Remove default bullets */
         margin-top: 0.5vh;
         margin-left: 1.5vw;
+        padding: 0;
+        display: flex; /* Arrange list items horizontally */
+        gap: 10px; /* Add spacing between items */
+    }
+
+    .dot-separated-list li {
+        color: #bbbbbb;
         font-family: 'Exo', sans-serif;
         font-size: 0.8em;
+        position: relative; /* Enable pseudo-element positioning */
     }
+
+    .dot-separated-list li:not(:last-child)::after {
+        content: "•"; /* Dot as separator */
+        margin-left: 10px; /* Space before the dot */
+        color: #bbbbbb; /* Adjust color if needed */
+    }
+
+    a {
+        color: #aaaaaa;
+    }
+
 </style>
