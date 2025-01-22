@@ -1,5 +1,6 @@
 ---
 import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 const name = 'Sid Sancheti';
 const {title} = Astro.props;
@@ -17,41 +18,27 @@ const {title} = Astro.props;
       <Navigation />
       <slot />
     </div>
+    <Footer />
   </body>
 </html>
 
 <style>
   
-  body {
-    margin: 0px;
-    padding: 0px;
-  }
+
   .rectangle {
-    width: 94vw;  
-    height: 94vh;
-    margin-left: 3vw;
+    width: 97vw;  
+    height: 90vh;
+    margin-left: 1vw;
     margin-top: 2vh;
     border: 2px solid white;
   }
 
-  @font-face {
-    font-family: 'Oxanium';
-    src: url('/fonts/Oxanium-ExtraLight.ttf') format('truetype');
-  }
 
-  @font-face {
-    font-family: 'Exo';
-    src: url('/fonts/Exo-Light.ttf') format('truetype');
-  }
 
   @media (max-width: 600px) {
     .rectangle {
       height: 90vh;
       margin-top: 3.5vh;
-    }
-    
-    h1 {
-      margin: 3%;
     }
   }
 </style>

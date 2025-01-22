@@ -2,6 +2,11 @@ html {
   background-color: black;
 }
 
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
 h1 {
   font-size: 4rem;
   text-decoration: none;
@@ -14,14 +19,16 @@ h1 {
 
 @font-face {
   font-family: 'Oxanium';
-  src: url('/fonts/Oxanium-ExtraLight.ttf') format('tff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  src: url('/fonts/Oxanium-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Exo';
+  src: url('/fonts/Exo-Light.ttf') format('truetype');
 }
 
 @media (max-width: 600px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
