@@ -1,16 +1,20 @@
 ---
 
 ---
-<header>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
-  </nav>
-</header>
+<nav>
+  <ul class="vertical-nav">
+    <li><a href="/home">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/fish">Fish</a></li>
+    <li><a href="/music">Music</a></li>
+  </ul>
+</nav>
 
 <style>
-  header {
-    margin-left: 1vw;
+
+  nav {
+    display: flex;
+    gap: 15px;
   }
 
   a {
@@ -20,6 +24,30 @@
     font-family: 'Exo', sans-serif;
     padding: 5px;
   }
+
+  /* Style the vertical navigation */
+  .vertical-nav {
+    list-style: none; /* Remove bullet points */
+    padding: 0;       /* Remove default padding */
+    margin: 0;        /* Remove default margin */
+    margin-left: 1vw; /* Add space to the left */
+    width: 200px;     /* Set a fixed width for the nav */
+  }
+
+  /* Style the links */
+  .vertical-nav a {
+    display: block;             /* Make the links fill the container */
+    text-decoration: none;      /* Remove underline */
+    padding: 10px 15px;         /* Spacing */
+    color: white;
+    font-family: 'Exo', sans-serif; /* Font style */
+  }
+
+  /* Add hover effect */
+  .vertical-nav a:hover {
+    color: #888888;             /* Change text color */
+  }
+
 
   @media (max-width: 600px) {
     a {
