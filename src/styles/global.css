@@ -15,13 +15,14 @@ h1 {
   color: white;
   padding: 0px;
   font-family: 'Oxanium', sans-serif;
+  font-weight: 300;
   margin: 1%;
   margin-left: 2vw;
 }
 
 @font-face {
   font-family: 'Oxanium';
-  src: url('/fonts/Oxanium-ExtraLight.ttf') format('truetype');
+  src: url('/fonts/Oxanium-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
