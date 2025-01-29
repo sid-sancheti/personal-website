@@ -3,7 +3,6 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import Sphere from '../components/Sphere.astro';
 import '../styles/global.css';
-const name = 'Sid Sancheti';
 const {title} = Astro.props;
 ---
 <html lang="en">
@@ -12,11 +11,12 @@ const {title} = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <!-- Comment out the line below if you are pulling this code. -->
     <link rel="icon" type="image/png" href="/SS.jpg">
   </head>
   <body>
     <div class="rectangle">
-      <h1>{name}</h1>
+      <h1>Sid Sancheti</h1>
       <Navigation />
       <slot />
       <Sphere />
@@ -27,7 +27,6 @@ const {title} = Astro.props;
 
 <style>
   
-
   .rectangle {
     width: 97vw;  
     height: 90vh;
@@ -35,8 +34,6 @@ const {title} = Astro.props;
     margin-top: 2vh;
     border: 2px solid white;
   }
-
-
 
   @media (max-width: 600px) {
     .rectangle {

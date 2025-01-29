@@ -20,6 +20,14 @@ h1 {
   margin-left: 2vw;
 }
 
+p {
+  font-family: 'Oxanium', sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  color: white;
+  margin-left: 2vw;
+}
+
 @font-face {
   font-family: 'Oxanium';
   src: url('/fonts/Oxanium-VariableFont_wght.ttf') format('truetype');
