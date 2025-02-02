@@ -1,7 +1,7 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-import Sphere from '../components/Sphere.astro';
+import Sphere from '../components/Sphere.jsx';
 import '../styles/global.css';
 const {title} = Astro.props;
 ---
@@ -23,15 +23,11 @@ I need to make the sphere a React component
   <body>
     <div class="rectangle">
       <h1>Sid Sancheti</h1>
+      <Navigation />
       <slot />
-      <!-- Sphere is an astro component and can't be hydrated. Convert it to a React component. -->
       <Sphere client:load/>
     </div>
-    <ul class="dot-separated-list">
-      <li>© Sid Sancheti 2025</li>
-      <li>Built using <a class="footer_link" href="https://astro.build/" target="_blank">Astro</a></li>
-      <li>Inspiration drawn from <a class="footer_link" href="https://p5aholic.me/" target="_blank">Keita Yamada</a></li>
-    </ul>
+    <Footer />
   </body>
 </html>
 
