@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { InitSphere } from "../scripts/sphere.js";
 
 const SphereStyle = {
@@ -10,6 +10,18 @@ const SphereStyle = {
 const Sphere = () => {
   useEffect(() => {
     InitSphere();
+  }, []);
+
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    if (!canvasRef.current) return;
+    
+    // Initialize WebGL only if it's not already initialized
+    if (!canvasRef.current.dataset.initialized) {
+      canvasRef.current.dataset.initialized = true;
+      initWebGL(canvasRef.current);
+    }
   }, []);
 
   return (
