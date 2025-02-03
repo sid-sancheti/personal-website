@@ -1,5 +1,5 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import AppRouter from '../components/Router.jsx';
 import Footer from '../components/Footer.astro';
 import Sphere from '../components/Sphere.astro';
 import Title from '../components/Title.astro';
@@ -24,7 +24,7 @@ I need to make the sphere a React component
   <body>
     <div class="rectangle">
       <Title />
-      <Navigation client:load/>
+      <AppRouter client:only="react" />
       <slot />
     </div>
     <Sphere />
@@ -33,7 +33,6 @@ I need to make the sphere a React component
 </html>
 
 <style>
-  
   .rectangle {
     width: 97vw;  
     height: 92vh;

@@ -1,3 +1,12 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "../pages/Home";
-import About from "../pages/About";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navigation from "./Navigation";
+
+const AppRouter = () => {
+  return (
+    <Router>
+      <Navigation />
+    </Router>
+  );
+};
+
+export default AppRouter;
