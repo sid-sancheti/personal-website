@@ -2,7 +2,7 @@
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import Sphere from '../components/Sphere.astro';
-import Title from '../components/Title.jsx';
+import Title from '../components/Title.astro';
 import '../styles/global.css';
 const {title} = Astro.props;
 ---
@@ -24,7 +24,7 @@ I need to make the sphere a React component
   <body>
     <div class="rectangle">
       <Title />
-      <Navigation />
+      <Navigation client:load/>
       <slot />
     </div>
     <Sphere />
