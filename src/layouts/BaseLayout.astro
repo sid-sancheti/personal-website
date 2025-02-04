@@ -3,7 +3,6 @@ import AppRouter from '../components/Router.jsx';
 import Footer from '../components/Footer.astro';
 import Sphere from '../components/Sphere.astro';
 import Title from '../components/Title.astro';
-import '../styles/global.css';
 const {title} = Astro.props;
 ---
 <!-- 
@@ -24,7 +23,7 @@ I need to make the sphere a React component
   <body>
     <div class="rectangle">
       <Title />
-      <AppRouter client:only="react" />
+      <AppRouter client:only="react"/>
       <slot />
     </div>
     <Sphere />
@@ -40,80 +39,5 @@ I need to make the sphere a React component
     margin-top: 2vh;
     border: 2px solid white;
   }
-  nav {
-    display: flex;
-    gap: 15px;
-  }
 
-  a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.3em;
-    font-family: 'Exo', sans-serif;
-    padding: 5px;
-  }
-  
-
-  a.footer_link {
-    color: #dddddd;
-  }
-
-  .dot-separated-list {
-        list-style: none; /* Remove default bullets */
-        margin-top: 0.5vh;
-        margin-left: 1.5vw;
-        padding: 0;
-        display: flex; /* Arrange list items horizontally */
-        gap: 10px; /* Add spacing between items */
-    }
-
-    .dot-separated-list li {
-        color: #dddddd;
-        font-family: 'Exo', sans-serif;
-        font-size: 0.8em;
-        position: relative; /* Enable pseudo-element positioning */
-    }
-
-    .dot-separated-list li:not(:last-child)::after {
-        content: "•"; /* Dot as separator */
-        margin-left: 10px; /* Space before the dot */
-        color: #dddddd; /* Adjust color if needed */
-    }
-
-  /* Style the vertical navigation */
-  .vertical-nav {
-    list-style: none; /* Remove bullet points */
-    padding: 0;       /* Remove default padding */
-    margin: 0;        /* Remove default margin */
-    margin-left: 1vw; /* Add space to the left */
-    width: 200px;     /* Set a fixed width for the nav */
-  }
-
-  /* Style the links */
-  .vertical-nav a {
-    display: block;             /* Make the links fill the container */
-    text-decoration: none;      /* Remove underline */
-    padding: 10px 15px;         /* Spacing */
-    color: white;
-    font-family: 'Exo', sans-serif; /* Font style */
-  }
-
-  /* Add hover effect */
-  .vertical-nav a:hover {
-    color: #888888;             /* Change text color */
-  }
-
-
-  @media (max-width: 600px) {
-    a {
-      font-size: 1em;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .rectangle {
-      height: 90vh;
-      margin-top: 3.5vh;
-    }
-  }
 </style>

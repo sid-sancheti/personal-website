@@ -38,6 +38,9 @@ void main(void) {
 const NUM_POINTS = 2000;
 const SCALE = 0.9;
 
+// Color of the background
+const BACKGROUND_COLOR = [0.0667, 0.0667, 0.0667, 1.0];
+
 /**
  * Generates a 3D array of points that represent a sphere
  *
@@ -93,7 +96,7 @@ export function InitSphere() {
     var yOffset = (canvas.height - min) / 2;
     gl.viewport(xOffset, yOffset, min, min);
 
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    gl.clearColor(BACKGROUND_COLOR[0], BACKGROUND_COLOR[1], BACKGROUND_COLOR[2], BACKGROUND_COLOR[3]);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
   };
 

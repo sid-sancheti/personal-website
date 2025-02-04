@@ -1,17 +1,26 @@
-import {Link} from "react-router-dom";
-import "../styles/nav.css";
+import { useEffect } from "react";
 
 const Navigation = () => {
+    useEffect(() => {
+        document.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.location.href = link.href; // Simulate a normal full-page navigation
+            });
+        });
+    }, []);
+
     return (
-        // I may need to remove the astro-prefetch attribute
-        <nav style={{ display: "flex", flexDirection: "column", gap: "15px"}}> <ul class="vertical-nav">
-            <li><Link to="/" className="nav-link">Home</Link></li>
-            <li><Link to="/blogs" className="nav-link">Blogs</Link></li>
-            <li><Link to="/about" className="nav-link">About</Link></li>
-            <li><Link to="/fish" className="nav-link">Fish</Link></li>
-            <li><Link to="/music" className="nav-link">Music</Link></li>
-        </ul></nav>
-    )
-}
+        <nav>
+            <ul className="vertical-nav">
+                <li><a className="nav-link" href="/">Home</a></li>
+                <li><a className="nav-link" href="/blogs">Blogs</a></li>
+                <li><a className="nav-link" href="/about">About</a></li>
+                <li><a className="nav-link" href="/fish">Fish</a></li>
+                <li><a className="nav-link" href="/music">Music</a></li>
+            </ul>
+        </nav>
+    );
+};
 
 export default Navigation;
