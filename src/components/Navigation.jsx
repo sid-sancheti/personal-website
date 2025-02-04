@@ -1,14 +1,6 @@
 import { useEffect } from "react";
 
 const Navigation = () => {
-    useEffect(() => {
-        document.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", (e) => {
-                e.preventDefault();
-                window.location.href = link.href; // Simulate a normal full-page navigation
-            });
-        });
-    }, []);
 
     return (
         <nav>
