@@ -3,6 +3,7 @@ import AppRouter from '../components/Router.jsx';
 import Footer from '../components/Footer.astro';
 import Sphere from '../components/Sphere.astro';
 import Title from '../components/Title.astro';
+import Navigation from '../components/Navigation.astro';
 const {title} = Astro.props;
 ---
 <!-- 
@@ -23,10 +24,11 @@ I need to make the sphere a React component
   <body>
     <div class="rectangle">
       <Title />
-      <AppRouter client:only="react"/>
+      <Navigation />
+      <!-- <AppRouter client:only="react"/> -->
       <slot />
     </div>
-    <Sphere />
+    <Sphere/>
     <Footer />
   </body>
 </html>

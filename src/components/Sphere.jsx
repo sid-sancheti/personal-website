@@ -25,12 +25,10 @@ const Sphere = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen flex justify-center items-center">
+    <div>
       <canvas id="sphere" style={SphereStyle}>
         Your browser does not support HTML5
       </canvas>
-      <br />
-      <i>Demo is above this text</i>
     </div>
   );
 };
