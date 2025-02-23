@@ -1,3 +1,7 @@
 .rectangle {
-
+    width: 97vw;  
+    height: 92vh;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    border: 2px solid white;
 }
