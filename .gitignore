@@ -42,3 +42,7 @@ next-env.d.ts
 
 # Linter
 .eslintrc.json
+
+
+# Personal
+notes.md
