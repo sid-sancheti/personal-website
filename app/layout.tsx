@@ -1,4 +1,6 @@
 // Base Layout with rectangle, header, footer, and sphere.
+import Sphere from './components/Sphere';
+
 import styles from './styles.module.css';
 import './global.css';
 
@@ -20,6 +22,7 @@ export default function BaseLayout({
                 {/* Layout UI */}
                 {/* Place children where you want to render a page or nested layout */}
                 <main>{children}</main>
+                <Sphere />
             </div>
         </body>
       </html>

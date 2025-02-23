@@ -1,8 +1,9 @@
 // components/Sphere.tsx
+"use client";
 
-import React, { useRef, useEffect } from 'react';
-import * as THREE from 'three';
-import { Canvas, useFrame } from '@react-three/fiber';
+import React, { useRef, useEffect } from "react";
+import * as THREE from "three";
+import { Canvas, useFrame } from "@react-three/fiber";
 
 const NUM_POINTS = 2000;
 const SCALE = 0.9;
@@ -43,26 +44,35 @@ const Sphere: React.FC = () => {
   const points = populateSpherePoints();
   const groupRef = useRef<THREE.Group>(null);
 
-  useFrame(({ clock }) => {
-    const elapsedTime = clock.getElapsedTime();
-    if (groupRef.current) {
-      groupRef.current.rotation.x = elapsedTime / 10;
-      groupRef.current.rotation.y = elapsedTime / 10;
-    }
-  });
-
   return (
-    <Canvas>
+    <Canvas
+      id="canvas"
+      style={{
+        background: `#${BACKGROUND_COLOR.toString(16)}`,
+        position: "absolute",
+        top: "59%",
+        left: "78%",
+      }}
+    >
       <ambientLight intensity={0.5} />
       {/* <pointLight position={} /> */}
       <group ref={groupRef}>
         {points.map((point, index) => (
           <mesh key={index} position={point}>
             <sphereGeometry args={[0.01, 32, 32]} />
-            <meshStandardMaterial color={point.z < 0.3? 'black': 'white'} />
+            <meshStandardMaterial color={point.z < 0.3 ? "black" : "white"} />
           </mesh>
         ))}
       </group>
+
+      {useFrame(({ clock }) => {
+        // Call useFrame like this
+        const elapsedTime = clock.getElapsedTime();
+        if (groupRef.current) {
+          groupRef.current.rotation.x = elapsedTime / 10;
+          groupRef.current.rotation.y = elapsedTime / 10;
+        }
+      })}
     </Canvas>
   );
 };
