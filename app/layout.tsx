@@ -10,7 +10,7 @@ export default function BaseLayout({
         <meta charSet="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <title>Sid Sancheti's Website</title>
-            <link rel="icon" type="image/jpg" href="/SS.jpg" />
+            <link rel="icon" type="image/jpg" href="/favicon.jpg" />
         </head>
         <body>
           {/* Layout UI */}
