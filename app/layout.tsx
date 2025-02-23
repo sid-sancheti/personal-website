@@ -1,4 +1,6 @@
 // Base Layout with rectangle, header, footer, and sphere.
+import styles from './styles.module.css';
+
 export default function BaseLayout({
     children,
   }: {
@@ -13,9 +15,11 @@ export default function BaseLayout({
             <link rel="icon" type="image/jpg" href="/favicon.jpg" />
         </head>
         <body>
-          {/* Layout UI */}
-          {/* Place children where you want to render a page or nested layout */}
-          <main>{children}</main>
+            <div className={styles.rectangle}>
+                {/* Layout UI */}
+                {/* Place children where you want to render a page or nested layout */}
+                <main>{children}</main>
+            </div>
         </body>
       </html>
     )
