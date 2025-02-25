@@ -18,8 +18,8 @@ const BACKGROUND_COLOR = 0x000000;
  * @link https://scholar.rose-hulman.edu/cgi/viewcontent.cgi?article=1387&context=rhumj
  * @returns {THREE.Vector3} - An array of NUM_POINTS number of Vector3 points
  */
-function populateSpherePoints() {
-  const points: THREE.Vector3[] = [];
+function populateSpherePoints(): THREE .Vector3[] {
+  let points: THREE.Vector3[] = [];
   let s = -1 + 1.0 / (NUM_POINTS - 1);
   const stepSize = (2.0 - 2.0 / (NUM_POINTS - 1)) / (NUM_POINTS - 1);
   const x = 0.1 + 1.2 * NUM_POINTS;
@@ -64,15 +64,6 @@ const Sphere: React.FC = () => {
           </mesh>
         ))}
       </group>
-
-      {useFrame(({ clock }) => {
-        // Call useFrame like this
-        const elapsedTime = clock.getElapsedTime();
-        if (groupRef.current) {
-          groupRef.current.rotation.x = elapsedTime / 10;
-          groupRef.current.rotation.y = elapsedTime / 10;
-        }
-      })}
     </Canvas>
   );
 };

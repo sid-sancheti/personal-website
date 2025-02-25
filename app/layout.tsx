@@ -19,6 +19,7 @@ export default function BaseLayout({
         </head>
         <body>
             <div className={styles.rectangle}>
+              <h1>Sid Sancheti</h1>
                 {/* Layout UI */}
                 {/* Place children where you want to render a page or nested layout */}
                 <main>{children}</main>
