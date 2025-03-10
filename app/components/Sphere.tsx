@@ -1,20 +1,13 @@
-// components/Sphere.tsx
-"use client";
+// Sphere.tsx
 
 import * as THREE from "three";
-import React, { useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber/native";
+import React, { useMemo } from "react";
+import { Canvas } from "@react-three/fiber";
+import { Points, PointMaterial } from "@react-three/drei";
 
 const NUM_POINTS = 2000;
 const SCALE = 0.9;
 
-/**
- * Generates a 3D array of points that represent a sphere
- *
- * Uses the formula specified in the following paper:
- * @link https://scholar.rose-hulman.edu/cgi/viewcontent.cgi?article=1387&context=rhumj
- * @returns {THREE.Vector3} - An array of NUM_POINTS number of Vector3 points
- */
 function populateSpherePoints(): THREE.Vector3[] {
   let points: THREE.Vector3[] = [];
   let s = -1 + 1.0 / (NUM_POINTS - 1);
@@ -35,4 +28,25 @@ function populateSpherePoints(): THREE.Vector3[] {
   }
 
   return points;
+}
+
+const SpherePoints = () => {
+  const points = useMemo(() => {
+    return new Float32Array(populateSpherePoints().flatMap(v => [v.x, v.y, v.z]));
+  }, []);
+
+  return (
+    <Points positions={points} frustumCulled={false}>
+      <PointMaterial size={0.02} sizeAttenuation color="white" />
+    </Points>
+  );
+};
+
+export default function Sphere() {
+  return (
+    <Canvas camera={{ position: [0, 0, 2] }}>
+      <ambientLight />
+      <SpherePoints />
+    </Canvas>
+  );
 }
