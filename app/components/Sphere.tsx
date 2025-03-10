@@ -1,4 +1,5 @@
 // Sphere.tsx
+"use client"
 
 import * as THREE from "three";
 import React, { useMemo } from "react";
