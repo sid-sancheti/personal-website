@@ -17,7 +17,7 @@ function populateSpherePoints(): THREE.Vector3[] {
 
   for (let i = 0; i < NUM_POINTS; i++, s += stepSize) {
     const u = s * x;
-    const v = (Math.PI / 2) * Math.sign(s) * (1 - Math.sqrt(1 - Math.abs(s)));
+    const v = (globalThis.Math.PI / 2) * globalThis.Math.sign(s) * (1 - globalThis.Math.sqrt(1 - globalThis.Math.abs(s)));
 
     points.push(
       new THREE.Vector3(
