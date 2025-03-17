@@ -1,9 +1,8 @@
-// Sphere.tsx
 "use client"
 
 import * as THREE from "three";
-import React, { useMemo, useRef, useFrame } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { useMemo, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 
 const NUM_POINTS = 2000;
@@ -31,7 +30,7 @@ function populateSpherePoints(): THREE.Vector3[] {
   return points;
 }
 
-const SpherePoints = () => {
+const SpherePoints = ({ sphereRef }: { sphereRef: React.MutableRefObject<THREE.Group | null> }) => {
   const points = useMemo(() => {
     return populateSpherePoints();
   }, []);
@@ -54,6 +53,7 @@ const SpherePoints = () => {
 
 export default function Sphere() {
   const sphereRef = useRef<THREE.Group>(null);
+
   useFrame(() => {
     if (sphereRef.current) {
       sphereRef.current.rotation.x += 0.005;
@@ -66,7 +66,7 @@ export default function Sphere() {
     <Canvas camera={{ position: [0, 0, 2] }}>
       <ambientLight />
       <group ref={sphereRef}>
-        <SpherePoints />
+        <SpherePoints sphereRef={sphereRef} />
       </group>
     </Canvas>
   );
