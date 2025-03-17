@@ -1,73 +1,61 @@
 "use client"
 
-import * as THREE from "three";
-import React, { useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial } from "@react-three/drei";
+import { useRef, useMemo } from "react";
+import * as THREE from "three";
 
 const NUM_POINTS = 2000;
 const SCALE = 0.9;
 
-function populateSpherePoints(): THREE.Vector3[] {
-  let points: THREE.Vector3[] = [];
+function populateSpherePoints(): Float32Array {
+  let positions = new Float32Array(NUM_POINTS * 3);
   let s = -1 + 1.0 / (NUM_POINTS - 1);
   const stepSize = (2.0 - 2.0 / (NUM_POINTS - 1)) / (NUM_POINTS - 1);
   const x = 0.1 + 1.2 * NUM_POINTS;
 
   for (let i = 0; i < NUM_POINTS; i++, s += stepSize) {
     const u = s * x;
-    const v = (globalThis.Math.PI / 2) * globalThis.Math.sign(s) * (1 - globalThis.Math.sqrt(1 - globalThis.Math.abs(s)));
+    const v = (Math.PI / 2) * Math.sign(s) * (1 - Math.sqrt(1 - Math.abs(s)));
 
-    points.push(
-      new THREE.Vector3(
-        SCALE * Math.cos(u) * Math.cos(v),
-        SCALE * Math.sin(u) * Math.cos(v),
-        SCALE * Math.sin(v)
-      )
-    );
+    positions[i * 3] = SCALE * Math.cos(u) * Math.cos(v);
+    positions[i * 3 + 1] = SCALE * Math.sin(u) * Math.cos(v);
+    positions[i * 3 + 2] = SCALE * Math.sin(v);
   }
 
-  return points;
+  return positions;
 }
 
-const SpherePoints = ({ sphereRef }: { sphereRef: React.MutableRefObject<THREE.Group | null> }) => {
-  const points = useMemo(() => {
-    return populateSpherePoints();
-  }, []);
-
-  const clippedPoints = useMemo(() => {
-    const plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0.5); // Plane at z = 0.5
-    return points.filter((point) => plane.distanceToPoint(point) > 0);
-  }, [points]);
-
-  const float32Array = useMemo(() => {
-    return new Float32Array(clippedPoints.flatMap(v => [v.x, v.y, v.z]));
-  }, [clippedPoints]);
-
-  return (
-    <Points positions={float32Array} frustumCulled={false}>
-      <PointMaterial size={0.02} sizeAttenuation color="white" transparent alphaTest={0.5} depthWrite={false}/>
-    </Points>
-  );
-};
-
-export default function Sphere() {
-  const sphereRef = useRef<THREE.Group>(null);
+function SpherePoints() {
+  const ref = useRef<THREE.Points>(null);
+  const positions = useMemo(() => populateSpherePoints(), []);
 
   useFrame(() => {
-    if (sphereRef.current) {
-      sphereRef.current.rotation.x += 0.005;
-      sphereRef.current.rotation.y += 0.005;
-      sphereRef.current.rotation.z += 0.005;
+    if (ref.current) {
+      ref.current.rotation.x += 0.01;
+      ref.current.rotation.y += 0.01;
     }
   });
 
   return (
-    <Canvas camera={{ position: [0, 0, 2] }}>
-      <ambientLight />
-      <group ref={sphereRef}>
-        <SpherePoints sphereRef={sphereRef} />
-      </group>
+    <points ref={ref}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          array={positions}
+          count={positions.length / 3}
+          itemSize={3}
+          args={[positions, 3]}
+        />
+      </bufferGeometry>
+      <pointsMaterial color={0xffffff} size={0.01} />
+    </points>
+  );
+}
+
+export default function App() {
+  return (
+    <Canvas camera={{ position: [0, 0, 5] }}>
+      <SpherePoints />
     </Canvas>
   );
 }
