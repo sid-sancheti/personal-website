@@ -1,8 +1,10 @@
-"use client"
+"use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, useMemo } from "react";
 import * as THREE from "three";
+
+import styles from "./sphere.module.css";
 
 const NUM_POINTS = 2000;
 const SCALE = 0.9;
@@ -29,10 +31,14 @@ function SpherePoints() {
   const ref = useRef<THREE.Points>(null);
   const positions = useMemo(() => populateSpherePoints(), []);
 
+  const clippingPlane = useMemo(() => {
+    return new THREE.Plane(new THREE.Vector3(0, 0, 1), 0.3); // Plane normal pointing up, clipping at z = -0.3
+  }, []);
+
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.x += 0.01;
-      ref.current.rotation.y += 0.01;
+      ref.current.rotation.x += 0.0005;
+      ref.current.rotation.y += 0.001;
     }
   });
 
@@ -47,14 +53,29 @@ function SpherePoints() {
           args={[positions, 3]}
         />
       </bufferGeometry>
-      <pointsMaterial color={0xffffff} size={0.01} />
+      <pointsMaterial
+        color={0xffffff}
+        size={0.01}
+        clippingPlanes={[clippingPlane]} // Apply the clipping plane
+        clipIntersection={false} // show only the points that are not clipped.
+      />
     </points>
   );
 }
 
 export default function App() {
   return (
-    <Canvas camera={{ position: [0, 0, 5] }}>
+    <Canvas
+      camera={{ position: [0, 0, 1.5] }}
+      style={{
+        backgroundColor: "black",
+        width: `${window.innerHeight / 1.5}px`,
+        height: `${window.innerHeight / 1.5}px`,
+        position: "absolute",
+        top: "59%",
+        left: "78%",
+      }}
+    >
       <SpherePoints />
     </Canvas>
   );
