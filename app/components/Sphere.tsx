@@ -1,6 +1,6 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useRef, useMemo } from "react";
 import * as THREE from "three";
 
@@ -29,11 +29,9 @@ function populateSpherePoints(): Float32Array {
 
 function SpherePoints() {
   const ref = useRef<THREE.Points>(null);
-  const positions = useMemo(() => populateSpherePoints(), []);
+  const points = useMemo(() => populateSpherePoints(), []);
 
-  const clippingPlane = useMemo(() => {
-    return new THREE.Plane(new THREE.Vector3(0, 0, 1), 0.3); // Plane normal pointing up, clipping at z = -0.3
-  }, []);
+  const spriteTexture = useLoader(THREE.TextureLoader, "/white_circle.png");
 
   useFrame(() => {
     if (ref.current) {
@@ -43,23 +41,12 @@ function SpherePoints() {
   });
 
   return (
-    <points ref={ref}>
-      <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          array={positions}
-          count={positions.length / 3}
-          itemSize={3}
-          args={[positions, 3]}
+    <>
+      {points.map((point, index)) => (
+        <sprite 
         />
-      </bufferGeometry>
-      <pointsMaterial
-        color={0xffffff}
-        size={0.01}
-        clippingPlanes={[clippingPlane]} // Apply the clipping plane
-        clipIntersection={false} // show only the points that are not clipped.
-      />
-    </points>
+      )}
+    </>
   );
 }
 
