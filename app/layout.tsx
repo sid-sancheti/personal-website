@@ -1,5 +1,6 @@
 // Base Layout with rectangle, header, footer, and sphere.
 import Sphere from './components/Sphere';
+import Navigation from './components/Navigation';
 
 import styles from './styles.module.css';
 import './global.css';
@@ -20,6 +21,7 @@ export default function BaseLayout({
         <body>
             <div className={styles.rectangle}>
               <h1>Sid Sancheti</h1>
+                <Navigation />
                 {/* Layout UI */}
                 {/* Place children where you want to render a page or nested layout */}
                 <main>{children}</main>
