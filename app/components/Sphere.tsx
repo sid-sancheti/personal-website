@@ -4,8 +4,6 @@ import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useRef, useMemo } from "react";
 import * as THREE from "three";
 
-import styles from "./sphere.module.css";
-
 const NUM_POINTS = 2000;
 const SCALE = 0.9;
 
@@ -29,7 +27,12 @@ function populateSpherePoints(): Float32Array {
 
 function SpherePoints() {
   const ref = useRef<THREE.Points>(null);
-  const points = useMemo(() => populateSpherePoints(), []);
+  const points = useMemo(() => {
+    const positions = populateSpherePoints();
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    return geometry;
+  }, []);
 
   const spriteTexture = useLoader(THREE.TextureLoader, "/white_circle.png");
 
@@ -41,12 +44,14 @@ function SpherePoints() {
   });
 
   return (
-    <>
-      {points.map((point, index)) => (
-        <sprite 
-        />
-      )}
-    </>
+    <points ref={ref} geometry={points} dispose={null}>
+      <pointsMaterial
+        size={0.02}
+        sizeAttenuation={true}
+        map={spriteTexture}
+        alphaTest={0.1}
+      />
+    </points>
   );
 }
 
@@ -55,7 +60,7 @@ export default function App() {
     <Canvas
       camera={{ position: [0, 0, 1.5] }}
       style={{
-        backgroundColor: "black",
+        backgroundColor: "#111111",
         width: `${window.innerHeight / 1.5}px`,
         height: `${window.innerHeight / 1.5}px`,
         position: "absolute",
