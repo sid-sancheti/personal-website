@@ -31,8 +31,8 @@ function SpherePoints() {
 
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.x += 0.01;
-      ref.current.rotation.y += 0.01;
+      ref.current.rotation.x += 0.0005;
+      ref.current.rotation.y += 0.0005;
     }
   });
 
@@ -54,7 +54,7 @@ function SpherePoints() {
 
 export default function App() {
   return (
-    <Canvas camera={{ position: [0, 0, 5] }}>
+    <Canvas camera={{ position: [0, 0, 1.5] }}>
       <SpherePoints />
     </Canvas>
   );
