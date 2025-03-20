@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { useRef, useMemo } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import * as THREE from "three";
 
 const NUM_POINTS = 2000;
@@ -43,26 +43,46 @@ function SpherePoints() {
     }
   });
 
+  // Creating the clipping plane
+  const clippingPlane = useMemo(() => {
+    return new THREE.Plane(new THREE.Vector3(0, 0, 1), 0.0); // Plane at z = 0.3
+  }, []);
+
   return (
-    <points ref={ref} geometry={points} dispose={null}>
-      <pointsMaterial
-        size={0.02}
-        sizeAttenuation={true}
-        map={spriteTexture}
-        alphaTest={0.1}
-      />
-    </points>
+    <>
+      <points ref={ref} geometry={points} dispose={null}>
+        <pointsMaterial
+          size={0.02}
+          side={THREE.DoubleSide}
+          sizeAttenuation={true}
+          map={spriteTexture}
+          alphaTest={0.1}
+          clippingPlanes={[clippingPlane]}
+        />
+      </points>
+
+    </>
   );
 }
 
 export default function App() {
+  const [size, setSize] = useState({ width: 500, height: 500 });
+
+  useEffect(() => {
+    setSize({
+      width: window.innerHeight / 1.5,
+      height: window.innerHeight / 1.5,
+    });
+  }, []);
+
+
   return (
     <Canvas
-      camera={{ position: [0, 0, 1.5] }}
+      camera={{ position: [0, 0, 1.55] }}
       style={{
         backgroundColor: "#111111",
-        width: `${window.innerHeight / 1.5}px`,
-        height: `${window.innerHeight / 1.5}px`,
+        width: `${size.width}px`,
+        height: `${size.height}px`,
         position: "absolute",
         top: "59%",
         left: "78%",
