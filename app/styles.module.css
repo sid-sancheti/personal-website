@@ -1,3 +1,8 @@
+.body {
+    margin: 0px;
+    padding: 0px;
+}
+
 .rectangle {
     width: 97vw;  
     height: 92vh;
@@ -8,9 +13,30 @@
 
 .nav {
     display: flex;
-    justify-content: space-between;
-    margin-top: 1vh;
-    margin-left: 1vw;
-    margin-right: 1vw;
 }
 
+.ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;       /* Remove default padding */
+    margin: 0;        /* Remove default margin */
+    margin-left: 1vw; /* Add space to the left */
+    width: 200px;     /* Set a fixed width for the nav */
+}
+
+.link {
+    display: block;             /* Make the links fill the container */
+    text-decoration: none;      /* Remove underline */
+    padding: 10px 15px;         /* Spacing */
+    color: white;
+    font-family: 'Exo', sans-serif; /* Font style */
+}
+
+.scroll_container {
+    overflow-y: auto;
+    position: relative;
+    border: 1px solid green;
+    width: 70vw;
+    height: 40vh;
+    margin-left: 8vw;
+    margin-top: 2vh;
+}

@@ -1,21 +1,23 @@
 /**
  * Navigation component
  */
-'use client';
+"use client";
 
-import Link from 'next/link';
-import styles from '../styles.module.css';
+import Link from "next/link";
+import styles from "../styles.module.css";
 
 export default function Navigation() {
   return (
     <>
-        <nav className={styles.nav}>
-            <Link href="/">Home</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/projects">Projects</Link>
-            <Link href="/about">About</Link>
-            <Link href="/fish">Fish</Link>
-        </nav>
+      <nav className={styles.nav}>
+        <ul className={styles.ul}>
+          <Link href="/" className={styles.link}>Home</Link>
+          <Link href="/blog" className={styles.link}>Blog</Link>
+          <Link href="/projects" className={styles.link}>Projects</Link>
+          <Link href="/about" className={styles.link}>About</Link>
+          <Link href="/fish" className={styles.link}>Fish</Link>
+        </ul>
+      </nav>
     </>
   );
 }
