@@ -11,8 +11,22 @@
     border: 2px solid white;
 }
 
-.nav {
+.layout {
     display: flex;
+    flex-direction: row;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+
+.nav {
+    position: relative;
+    display: flex;
+    width: 11vw;
+}
+
+.paragraph {
+    margin-left: 0;
 }
 
 .ul {
@@ -37,6 +51,6 @@
     border: 1px solid green;
     width: 70vw;
     height: 40vh;
-    margin-left: 8vw;
+    margin-left: 2vw;
     margin-top: 2vh;
 }

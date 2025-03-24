@@ -21,10 +21,12 @@ export default function BaseLayout({
       <body className={styles.body}>
         <div className={styles.rectangle}>
           <h1>Sid Sancheti</h1>
-          <Navigation />
-          {/* Layout UI */}
-          {/* Place children where you want to render a page or nested layout */}
-          <main className={styles.scroll_container}>{children}</main>
+          <div className={styles.layout}>
+            <Navigation />
+            {/* Layout UI */}
+            {/* Place children where you want to render a page or nested layout */}
+            <main className={styles.scroll_container}>{children}</main>
+          </div>
           <Sphere />
         </div>
       </body>
