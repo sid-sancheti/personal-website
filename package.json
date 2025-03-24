@@ -15,6 +15,7 @@
     "@react-three/drei": "^10.0.4",
     "@react-three/fiber": "^9.0.4",
     "@types/three": "^0.173.0",
+    "gray-matter": "^4.0.3",
     "next": "^15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

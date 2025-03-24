@@ -84,8 +84,8 @@ export default function App() {
         width: `${size.width}px`,
         height: `${size.height}px`,
         position: "absolute",
-        top: "59%",
         left: "78%",
+        zIndex: 1,
       }}
     >
       <SpherePoints />
