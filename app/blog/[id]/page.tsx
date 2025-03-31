@@ -1,3 +1,5 @@
+import "@/global.css";
+
 interface Post {
   id: string;
   title: string;

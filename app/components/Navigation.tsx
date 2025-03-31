@@ -6,6 +6,8 @@
 import Link from "next/link";
 import styles from "../styles.module.css";
 
+import "@/global.css";
+
 export default function Navigation() {
   return (
     <>

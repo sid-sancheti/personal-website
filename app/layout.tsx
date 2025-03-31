@@ -2,7 +2,6 @@
 import Sphere from "./components/Sphere";
 import Navigation from "./components/Navigation";
 
-import styles from "./styles.module.css";
 import "./global.css";
 
 export default function BaseLayout({
@@ -11,7 +10,7 @@ export default function BaseLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#111111]">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +18,7 @@ export default function BaseLayout({
         <title>Sid Sancheti's Website</title>
         <link rel="icon" type="image/jpg" href="/favicon.jpg" />
       </head>
-      <body className={styles.body}>
+      <body className="m-0 p-0 overflow-hidden bg-[#111111]">
         <div className={styles.rectangle}>
           <h1>Sid Sancheti</h1>
           <div className={styles.layout}>

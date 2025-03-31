@@ -1,14 +1,5 @@
-html {
-    background-color: #111111;
-}
-  
-body {
-    margin: 0px;
-    padding: 0px;
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-  
+@import 'tailwindcss';
+
 h1 {
     font-size: 4rem;
     text-decoration: none;

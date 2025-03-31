@@ -1,5 +1,7 @@
 "use client";
 
+import "@/global.css";
+
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useEffect, useState, useRef, useMemo } from "react";
 import * as THREE from "three";

@@ -1,5 +1,6 @@
 import { getSortedPostsData } from '@/lib/posts'; 
 
+import "@/global.css";
 // export async function getStaticProps() {
 //   const allPostsData = getSortedPostsData();
 //   return {
