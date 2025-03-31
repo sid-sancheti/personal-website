@@ -84,7 +84,8 @@ export default function App() {
         width: `${size.width}px`,
         height: `${size.height}px`,
         position: "absolute",
-        left: "78%",
+        left: "80%",
+        top: "60%",
         zIndex: 1,
       }}
     >

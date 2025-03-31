@@ -15,6 +15,7 @@ export default function BaseLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="/styles.css" rel="stylesheet" />
         <title>Sid Sancheti's Website</title>
         <link rel="icon" type="image/jpg" href="/favicon.jpg" />
       </head>

@@ -48,9 +48,10 @@
 .scroll_container {
     overflow-y: auto;
     position: relative;
-    border: 1px solid green;
+    /* border: 1px solid green;    TODO: Remove */
     width: 70vw;
-    height: 40vh;
+    height: 60vh;
     margin-left: 2vw;
     margin-top: 2vh;
+    z-index: 2;
 }

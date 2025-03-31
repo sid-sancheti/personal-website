@@ -12,6 +12,9 @@
       "dom.iterable",
       "esnext"
     ],
+    "paths": {
+      "@/*": ["./app/*"],
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "incremental": true,
