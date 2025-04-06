@@ -17,7 +17,7 @@ export interface PostData extends PostMetadata {
   content: string;
 }
 
-export function getSortedPostData(): PostMetadata[] {
+export function getSortedPostsData(): PostMetadata[] {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames
