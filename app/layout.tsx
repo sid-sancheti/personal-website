@@ -44,7 +44,7 @@ export default function BaseLayout({
               id="rectange"
               className="w-[96vw] h-[90vh] mx-auto border border-white"
             >
-              <h1 className="white font-[Oxanium]">Sid Sancheti</h1>
+              <h1>Sid Sancheti</h1>
               <div className={styles.layout}>
                 <Navigation />
                 {/* Layout UI */}
