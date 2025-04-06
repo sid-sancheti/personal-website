@@ -1,5 +1,20 @@
 @import 'tailwindcss';
 
+:root {
+    --pad: max(40px, 4vmin);
+}
+  
+@font-face {
+    font-family: 'Oxanium';
+    src: url('/fonts/Oxanium-VariableFont_wght.ttf') format('truetype');
+}
+
+  
+@font-face {
+    font-family: 'Exo';
+    src: url('/fonts/Exo-Light.ttf') format('truetype');
+}
+
 h1 {
     font-size: 4rem;
     text-decoration: none;
@@ -19,17 +34,7 @@ p {
     color: white;
     margin-left: 2vw;
 }
-  
-@font-face {
-    font-family: 'Oxanium';
-    src: url('/fonts/Oxanium-VariableFont_wght.ttf') format('truetype');
-}
-  
-@font-face {
-    font-family: 'Exo';
-    src: url('/fonts/Exo-Light.ttf') format('truetype');
-}
-  
+
 @media (max-width: 600px) {
     h1 {
         font-size: 3rem;
