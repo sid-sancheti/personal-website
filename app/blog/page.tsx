@@ -1,6 +1,5 @@
 // pages/blog/index.tsx
 import type { GetStaticProps, NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import { getSortedPostsData, PostMetadata } from '@/lib/posts'; // Adjust path if needed
 
@@ -11,11 +10,6 @@ interface BlogIndexProps {
 const BlogIndex: NextPage<BlogIndexProps> = ({ allPostsData }) => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <Head>
-        <title>My Blog</title>
-        <meta name="description" content="List of blog posts" />
-      </Head>
-
       <h1 className="text-4xl font-bold mb-8 text-center">Blog Posts</h1>
 
       <section className="space-y-6 max-w-2xl mx-auto">

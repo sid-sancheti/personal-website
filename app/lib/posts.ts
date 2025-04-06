@@ -87,3 +87,15 @@ export function getPostData(slug: string): PostData {
     content: matterResult.content, // The actual Markdown content
   };
 }
+
+export function getAllPostSlugs() {
+  const fileNames = fs.readdirSync(postsDirectory);
+  const slugs = fileNames.map((name) => {
+    const fullPath = path.join(postsDirectory, name);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const matterResult = matter(fileContents);
+    return (matterResult.data.slug || name.replace(/\.md$/, ""));
+  });
+
+  return slugs;
+}
