@@ -1,5 +1,5 @@
 // File: app/blog/[slug]/page.tsx
-import { getAllPostSlugs, getPostData, Post } from '@/lib/posts'; // Adjust import path if needed
+import { getAllPostSlugsInternal, getPostData, Post } from '@/lib/posts'; // Adjust import path if needed
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next'; // Import Metadata type
@@ -7,7 +7,7 @@ import type { Metadata } from 'next'; // Import Metadata type
 // Generate static paths for all posts at build time
 // This tells Next.js which blog post pages to build ahead of time
 export async function generateStaticParams() {
-  const slugs = getAllPostSlugs();
+  const slugs = getAllPostSlugsInternal();
   // The expected format is an array of objects, each with a 'slug' property
   return slugs.map((slug) => ({
     slug: slug,

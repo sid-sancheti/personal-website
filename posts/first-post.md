@@ -1,9 +1,10 @@
 ---
 title: 'My First Post!'
-slug: '/first-post/'
+slug: '/first-post'
 date: '03-24-2025'
-excerpt: 'The development of my personal website was a long, but rewarding process. It a significant undertaking, but also extremly rewarding. I have deployed on my Raspberry Pi that I picked up last October, and I am self-hosting. In order to get practice with some tools, I have used a Docker container in a CI/CD pipeline, a Kubernetes cluster for automated load managment, configured Cloudflare for DNS tools and DDoS protection.'
-preview: '/favicon.jpg'
+excerpt: 'This covers my process for developing my personal website and deploying it on my Raspberry Pi'
+tags: ["RaspberryPi", "CI/CD", "Self Hosting"]
+image: '/images/pi.jpg'
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

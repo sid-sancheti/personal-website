@@ -1,6 +1,9 @@
 ---
-title: This is a post about my personal website and how long it took me to build it. Share things that I learned and stuff like that.
-date: 03-25-2025
+title: 'My second Post!'
+slug: '/second-post'
+date: '03-24-2025'
+excerpt: 'This is my second post!'
+image: '/white_circle.png'
 ---
 
 ## Creation

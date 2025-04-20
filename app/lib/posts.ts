@@ -1,4 +1,3 @@
-// File: app/lib/posts.ts
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -22,8 +21,9 @@ export type Post = PostData & {
 // Consistent path to the posts directory
 const postsDir = path.join(process.cwd(), "posts");
 
-// Helper function to get slugs safely (used by getSortedPostData and getPostSlugs)
-function getAllPostSlugsInternal(): string[] {
+// Helper function to get slugs safely (used by getSortedPostData)
+// Use matter and fetch the slug from the frontmatter
+export function getAllPostSlugsInternal(): string[] {
   try {
     // Ensure the directory exists before reading
     if (!fs.existsSync(postsDir)) {
@@ -32,7 +32,12 @@ function getAllPostSlugsInternal(): string[] {
     }
     const fileNames = fs.readdirSync(postsDir);
     // Filter for markdown files only
-    return fileNames.filter(fileName => fileName.endsWith('.md')).map(fileName => fileName.replace(/\.md$/, ''));
+    return fileNames.filter(fileName => fileName.endsWith('.md')).map(fileName => {
+      const fileData = matter.read(path.join(postsDir, fileName));
+
+       // Use slug from frontmatter or fallback to filename
+      return fileData.data.slug || fileName.replace(/\.md$/, "");
+    });
   } catch (error) {
     console.error("Error reading posts directory:", postsDir, error);
     return []; // Return empty array on error
@@ -79,16 +84,6 @@ export function getSortedPostData(): PostData[] {
 
   return posts;
 }
-
-/**
- * Returns an array of slug strings for all posts.
- * Needed for generateStaticParams.
- * @returns {string[]} An array of slugs.
- */
-export function getAllPostSlugs(): string[] {
-    return getAllPostSlugsInternal();
-}
-
 
 /**
  * Returns the data and HTML content for a single post.
