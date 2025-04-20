@@ -16,7 +16,7 @@
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     text-decoration: none;
     color: white;
     padding: 0px;
@@ -30,7 +30,7 @@ h1 {
 p {
     font-family: 'Oxanium', sans-serif;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: white;
     margin-left: 2vw;
 }
