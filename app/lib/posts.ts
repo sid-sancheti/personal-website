@@ -49,7 +49,7 @@ export function getSortedPostData(): PostData[] {
  * @return {string[]} An array of slugs.
  */
 export function getPostSlugs(): string[] {
-  const postsDir = path.join(process.cwd(), "public", "posts");
+  const postsDir = path.join(process.cwd(), "posts");
   console.log("postsDir", postsDir);
   const files = fs.readdirSync(postsDir);
 
