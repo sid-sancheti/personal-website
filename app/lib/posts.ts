@@ -16,6 +16,8 @@ export type Post = {
   content: string;
 };
 
+const postsDir = path.join(process.cwd(), "posts");
+
 export function getSortedPostData(): PostData[] {
   // Read all md files from /posts/*
   const files = fs.readdirSync("posts");
@@ -49,8 +51,7 @@ export function getSortedPostData(): PostData[] {
  * @return {string[]} An array of slugs.
  */
 export function getPostSlugs(): string[] {
-  const postsDir = path.join(process.cwd(), "posts");
-  console.log("postsDir", postsDir);
+  console.log("Posts Directory:", postsDir);
   const files = fs.readdirSync(postsDir);
 
   return files.map((file) => {
