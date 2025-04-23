@@ -1,6 +1,6 @@
 ---
 title: 'My First Post!'
-slug: '/first-post'
+slug: 'first-post'
 date: '03-24-2025'
 excerpt: 'This covers my process for developing my personal website and deploying it on my Raspberry Pi'
 tags: ["RaspberryPi", "CI/CD", "Self Hosting"]

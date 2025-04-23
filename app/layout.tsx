@@ -45,11 +45,11 @@ export default function BaseLayout({
               className="w-[96vw] h-[90vh] mx-auto border border-white"
             >
               <h1>Sid Sancheti</h1>
-              <div className={styles.layout}>
+              <div className="flex flex-row w-full p-0 m-0">
                 <Navigation />
                 {/* Layout UI */}
                 {/* Place children where you want to render a page or nested layout */}
-                <main className={styles.scroll_container}>{children}</main>
+                <main className="overflow-y-auto scrollbar-hidden relative w-[70vw] h-[60vh] ml-[2vw] mt-[2vh] z-2">{children}</main>
               </div>
               <Sphere />
             </div>

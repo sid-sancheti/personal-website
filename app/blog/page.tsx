@@ -8,7 +8,7 @@ export default function BlogIndex() {
   const allPostsData: PostData[] = getSortedPostData();
 
   return (
-    <div className="container mx-auto p-4 overflow-hidden">
+    <div className="scrollbar-hidden mx-auto p-4 ">
       <ul className="space-y-4 overflow-y-hidden scrollbar-hide max-h-screen">
         {allPostsData.map(({ title, date, excerpt, slug, image }) => (
           <li key={slug} className="rounded-lg p-4 shadow-md">
