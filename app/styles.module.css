@@ -1,7 +1,0 @@
-.link {
-    display: block;             /* Make the links fill the container */
-    text-decoration: none;      /* Remove underline */
-    padding: 10px 15px;         /* Spacing */
-    color: white;
-    font-family: 'Exo', sans-serif; /* Font style */
-}
