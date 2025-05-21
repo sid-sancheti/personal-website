@@ -19,6 +19,7 @@ interface PostPageProps {
   params: {
     slug: string;
   };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 // Fetch data for a specific post based on the slug

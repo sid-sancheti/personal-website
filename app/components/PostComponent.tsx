@@ -19,9 +19,8 @@ export default function PostComponent({
   slug: string;
 }) {
   // Get the image from the public folder
-  // Assert that the image exists
-  const imagePath = require(`${image}`);
-
+  const imagePath = `/images/${image}`;
+  
   // Create a box with rounded corners, a white border, and a shadow effect
   return (
     <div className="rounded-lg border border-gray-200 shadow-md p-4 mb-4">

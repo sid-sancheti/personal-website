@@ -10,7 +10,7 @@ const NUM_POINTS = 2000;
 const SCALE = 0.9;
 
 function populateSpherePoints(): Float32Array {
-  let positions = new Float32Array(NUM_POINTS * 3);
+  const positions = new Float32Array(NUM_POINTS * 3);
   let s = -1 + 1.0 / (NUM_POINTS - 1);
   const stepSize = (2.0 - 2.0 / (NUM_POINTS - 1)) / (NUM_POINTS - 1);
   const x = 0.1 + 1.2 * NUM_POINTS;

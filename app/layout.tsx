@@ -1,38 +1,25 @@
 // Base Layout with rectangle, header, footer, and sphere.
 "use client";
+import Head from "next/head";
 import Sphere from "@/components/Sphere";
 import Navigation from "@/components/Navigation";
-import Loader from "@/components/loader/Loader";
 
-import { useState, useEffect } from "react";
 import "./global.css";
-
-import styles from "./styles.module.css";
 
 export default function BaseLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // React hook to check if the page is loading
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500); // Loading time in 1.5 seconds
-    return () => clearTimeout(timer);
-  });
 
   return (
     <html lang="en" className="bg-[#111111]">
-      <head>
+      <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="/styles.css" rel="stylesheet" />
-        <title>Sid Sancheti's Website</title>
+        <title>Sid Sancheti&apos;s Website</title>
         <link rel="icon" type="image/jpg" href="/favicon.jpg" />
-      </head>
+      </Head>
 
       <body className="m-0 p-0 overflow-hidden bg-[#111111]">
         {/* {loading ? (
