@@ -47,7 +47,7 @@ function SpherePoints() {
 
   // Creating the clipping plane
   const clippingPlane = useMemo(() => {
-    return new THREE.Plane(new THREE.Vector3(0, 0, 1), 0.0); // Plane at z = 0.3
+    return new THREE.Plane(new THREE.Vector3(0, 0, 1), 0.0);
   }, []);
 
   return (
@@ -82,7 +82,7 @@ export default function App() {
     <Canvas
       camera={{ position: [0, 0, 1.55] }}
       style={{
-        backgroundColor: "#111111",
+        backgroundColor: "#222",
         width: `${size.width}px`,
         height: `${size.height}px`,
         position: "absolute",

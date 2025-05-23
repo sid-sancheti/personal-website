@@ -31,7 +31,6 @@ export function getAllPostSlugsInternal(): string[] {
         return [];
     }
     const fileNames = fs.readdirSync(postsDir);
-    // Filter for markdown files only
     return fileNames.filter(fileName => fileName.endsWith('.md')).map(fileName => {
       const fileData = matter.read(path.join(postsDir, fileName));
 

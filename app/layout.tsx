@@ -13,7 +13,7 @@ export default function BaseLayout({
 }) {
 
   return (
-    <html lang="en" className="bg-[#111111]">
+    <html lang="en" className="bg-[#222]">
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +21,7 @@ export default function BaseLayout({
         <link rel="icon" type="image/jpg" href="/favicon.jpg" />
       </Head>
 
-      <body className="m-0 p-0 overflow-hidden bg-[#111111]">
+      <body className="m-0 p-0 overflow-hidden bg-[#222]">
         {/* {loading ? (
           <Loader />
         ) : ( */}
