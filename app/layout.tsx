@@ -3,6 +3,7 @@
 import Head from "next/head";
 import Sphere from "@/components/Sphere";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 import "./global.css";
 
@@ -28,7 +29,7 @@ export default function BaseLayout({
           <>
             <div id="header" className="w-full h-[4vh]"></div>
             <div
-              id="rectange"
+              id="rectangle"
               className="w-[96vw] h-[90vh] mx-auto border border-white"
             >
               <h1>Sid Sancheti</h1>
@@ -40,6 +41,7 @@ export default function BaseLayout({
               </div>
               <Sphere />
             </div>
+            <Footer />
           </>
         {/* )} */}
       </body>
