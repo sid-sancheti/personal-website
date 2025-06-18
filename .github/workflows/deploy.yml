@@ -27,4 +27,4 @@ jobs:
 
       - name: Reload application with PM2
         # Use the app name you configured in PM2
-        run: pm2 reload my-website
+        run: pm2 reload personal-website
