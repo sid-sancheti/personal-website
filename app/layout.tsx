@@ -9,14 +9,6 @@ import Footer from "@/components/Footer";
 
 import "./global.css";
 
-const SpherePlaceholder = () => {
-  return (
-    <div>   
-      {/* Remain unoccupied */}
-    </div>
-  )
-}
-
 
 export default function BaseLayout({
   children,
