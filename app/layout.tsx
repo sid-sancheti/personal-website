@@ -5,7 +5,10 @@ import Sphere from "@/components/Sphere";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
+// import dynamic from "next/dynamic";
+
 import "./global.css";
+
 
 export default function BaseLayout({
   children,
@@ -37,7 +40,7 @@ export default function BaseLayout({
                 <Navigation />
                 {/* Layout UI */}
                 {/* Place children where you want to render a page or nested layout */}
-                <main className="overflow-y-auto scrollbar-hidden relative w-[70vw] h-[60vh] ml-[2vw] mt-[2vh] z-2">{children}</main>
+                <main className="overflow-y-auto scrollbar-hidden relative w-[70vw] h-[60vh] mt-[2vh] z-2">{children}</main>
               </div>
               <Sphere />
             </div>

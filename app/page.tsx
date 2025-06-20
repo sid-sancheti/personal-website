@@ -4,13 +4,13 @@
 
 export default function Page() {
     return (
-        <p className="m-0">
-            Greetings traveller 🚀. Its a pleasure to make your aquantaince in my little corner of the internet.
-            A bit about me... I am a student at Purdue University studying Computer Science with a focus in Security.
-            I am a lover of all things tech and am always looking for the next big thing. I dive into everything that
-            piques my interest in the moment, which is currently Graphics and Security.
-
-            Feel free to explore a little bit longer 😁...
+        <p className="m-0 w-200">
+            <span className="font-bold">Hello there!</span> <span className="text-xs">General Kenobi</span>
+            <br />
+            <br />
+            Welcome to my little corner of the internet.
+            <br/>
+            Feel free to stick around and explore for a little while longer.
         </p>
     );
 }
