@@ -36,7 +36,7 @@ function SpherePoints() {
     return geometry;
   }, []);
 
-  const spriteTexture = useLoader(THREE.TextureLoader, "/white_circle.png");
+  const spriteTexture = useLoader(THREE.TextureLoader, "/white_circle.webp");
 
   useFrame(() => {
     if (ref.current) {
