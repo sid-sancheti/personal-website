@@ -9,7 +9,7 @@ export default function Navigation() {
   return (
     <>
       <nav className="flex relative m-[1vw]">
-        <ul className="list-none p-0 m-0 ml-[1vw] w-[200px] text-white font-[Exo]">
+        <ul className="list-none p-0 m-0 ml-[1vw] w-[150px] text-white font-[Exo]">
           <Link
             href="/"
             className="block px-[15px] py-[10px] no-underline hover:text-[#aaa]"
