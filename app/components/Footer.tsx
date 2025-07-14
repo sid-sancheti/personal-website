@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface SocialIconProps {
@@ -45,6 +46,8 @@ export default function Footer() {
       <footer className="w-full h-[6vh] text-white items-center justify-left flex mx-[2vw] gap-x-2">
         {/* <div className="m-0">© Sid Sancheti 2025</div>
         <span className="mx-3 text-lg align-middle leading-none">•</span>  */}
+        <div className="text-s">© Sid Sancheti 2025</div>
+        <span className="ml-0.5 mr-2 text-lg align-middle leading-none">•</span>
         <SocialIcon
           src="/github.svg"
           alt="GitHub"
@@ -60,6 +63,10 @@ export default function Footer() {
           width={30}
           height={30}
         />
+        <span className="ml-0.5 mr-3 text-lg align-middle leading-none">•</span>
+        <Link href='https://www.github.com/sid-sancheti/personal-website' className="text-white hover:text-gray-300">
+          <span className="text-s">Source</span>
+        </Link>
       </footer>
     </div>
   );

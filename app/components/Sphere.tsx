@@ -2,7 +2,7 @@
 
 import "@/global.css";
 
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useState, useRef, useMemo } from "react";
 import * as THREE from "three";
 
@@ -36,8 +36,6 @@ function SpherePoints() {
     return geometry;
   }, []);
 
-  const spriteTexture = useLoader(THREE.TextureLoader, "/white_circle.webp");
-
   useFrame(() => {
     if (ref.current) {
       ref.current.rotation.x += 0.0005;
@@ -57,7 +55,7 @@ function SpherePoints() {
           size={0.02}
           side={THREE.DoubleSide}
           sizeAttenuation={true}
-          map={spriteTexture}
+          color="white" // Set the color directly
           alphaTest={0.1}
           clippingPlanes={[clippingPlane]}
         />
@@ -67,7 +65,7 @@ function SpherePoints() {
   );
 }
 
-export default function App() {
+export default function Sphere() {
   const [size, setSize] = useState({ width: 500, height: 500 });
 
   useEffect(() => {
