@@ -10,7 +10,7 @@ export default function Page() {
       <br />
       Welcome to my little corner of the internet.
       <br />
-      I'm a rising junior at Purdue University with a passion for GenAI and
+      I&apos;m a rising junior at Purdue University with a passion for GenAI and
       Security, and a Data Analyst Intern at Chubb Insurance.
       <br />
       In my free time, I love playing flag football, following the NFL (go
