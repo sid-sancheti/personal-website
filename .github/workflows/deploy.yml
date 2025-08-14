@@ -5,6 +5,9 @@ on:
     branches:
       - main  # Or whichever branch you want to deploy from
 
+permissions:
+  contents: read
+
 jobs:
   build-and-deploy:
     # This is the key part that uses your Raspberry Pi
