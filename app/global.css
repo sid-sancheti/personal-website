@@ -1,8 +1,4 @@
 @import 'tailwindcss';
-
-:root {
-    --pad: max(40px, 4vmin);
-}
   
 @font-face {
     font-family: 'Oxanium';
@@ -13,18 +9,6 @@
 @font-face {
     font-family: 'Exo';
     src: url('/fonts/Exo-Light.ttf') format('truetype');
-}
-
-h1 {
-    font-size: 4.5rem;
-    text-decoration: none;
-    color: white;
-    padding: 0px;
-    font-family: 'Oxanium', sans-serif;
-    font-weight: 300;
-    margin: 1.2%;
-    margin-left: 2.5vw;
-    margin-bottom: 0;
 }
   
 p {

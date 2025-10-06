@@ -1,21 +1,18 @@
 // Base Layout with rectangle, header, footer, and sphere.
 "use client";
 import Head from "next/head";
-import Sphere from "@/components/Sphere";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Sphere from "@/components/Sphere";
 
-// import dynamic from "next/dynamic";
 
-import "./global.css";
-
+// Hello World!!!!!!
 
 export default function BaseLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="en" className="bg-[#222]">
       <Head>
@@ -29,23 +26,27 @@ export default function BaseLayout({
         {/* {loading ? (
           <Loader />
         ) : ( */}
-          <>
-            <div id="header" className="w-full h-[4vh]"></div>
-            <div
-              id="rectangle"
-              className="w-[96vw] h-[90vh] mx-auto border border-white"
-            >
-              <h1>Sid Sancheti</h1>
-              <div className="flex flex-row w-full p-0 m-0">
-                <Navigation />
-                {/* Layout UI */}
-                {/* Place children where you want to render a page or nested layout */}
-                <main className="overflow-y-auto scrollbar-hidden relative w-[70vw] h-[60vh] mt-[2vh] z-2">{children}</main>
-              </div>
-              <Sphere />
+        <>
+          <div id="header" className="w-full h-[4vh]"></div>
+          <div
+            id="rectangle"
+            className="w-[96vw] h-[90vh] mx-auto border border-white"
+          >
+            <h1 className="text-7xl no-underline text-white p-0 font-oxanium font-light mt-[1.2%] mr-[1.2%] mb-0 ml-[2.5vw]">
+              Sid Sancheti
+            </h1>
+            <Navigation />
+
+            <div className="flex flex-row w-full p-0 m-0">
+              <main className="overflow-y-auto scrollbar-hidden relative w-[70vw] h-[60vh] mt-[2vh] z-2">
+                {children}
+              </main>
             </div>
-            <Footer />
-          </>
+          </div>
+          <Sphere/>
+
+          <Footer />
+        </>
         {/* )} */}
       </body>
     </html>

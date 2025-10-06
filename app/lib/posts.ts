@@ -1,8 +1,6 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from 'remark';
-import html from 'remark-html';
 
 // Define types for metadata and the full post object
 export type PostData = {
@@ -114,7 +112,9 @@ export async function getPostData(slug: string): Promise<Post | null> {
         return null;
     }
 
-    // Process markdown content to HTML
+    // Dynamically import remark and remark-html for ESM compatibility
+    const { remark } = await import('remark');
+    const { default: html } = await import('remark-html');
     const processedContent = await remark().use(html).process(content);
     const contentHtml = processedContent.toString();
 

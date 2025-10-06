@@ -5,7 +5,7 @@
     "noEmit": false,
     "strict": true,
     "target": "es5",
-    "module": "esnext",
+    "module": "Node16",
     "jsx": "preserve",
     "lib": [
       "dom",
@@ -19,7 +19,7 @@
     "skipLibCheck": true,
     "incremental": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "plugins": [
