@@ -15,8 +15,8 @@ export default function Page() {
       I&apos;m a junior in Computer Science at Purdue University with a passion for 
       GenAI, networking, and security.
       <br />
-      In my free time, I love playing flag football, following the NFL (go
-      Niners!), and learning about the latest innovations in technology.
+      In my free time I play flag football, follow the NFL (go
+      Niners!), and learn about the latest innovations in the AI sphere.
       <br />
       <br />
       Feel free to stick around and explore for a little while longer.
